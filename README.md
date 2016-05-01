@@ -19,6 +19,15 @@ To run, the following changes need to be made:
 
     ./EMFlow nrows terrain_name.hgt
 
+Generating Input Data
+---------------------
+The program reads its data from a single file which represents terrain as a
+two-byte, big-endian, signed integer. The data in such a file can be drawn from
+Shuttle Radar Topography Mission SRTM3 files. An attached script `hgt_merge.py`
+will read in a number of these files and produce an output suitable for
+processing.
+
+
 About the Script
 ----------------
 * .creat folder tiles to store temporary tiles, the tiles folder is necessary for the program operation
