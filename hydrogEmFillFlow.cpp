@@ -468,7 +468,7 @@ void computeFlow(tiledMatrix<unsigned char> &dirs,tiledMatrix<int> &flow,const i
 //Allocates matrix: elevs[nrows][nrows] 
 void init(const int argc, const char **argv,int &nrows) {
 	if (argc!=3) {
-		cerr << "Error, use: hydrog nrows input" << endl;
+		cerr << "Syntax: " << argv[0] << " <nrows> <input>" << endl;
 		exit(1);
 	}
 
