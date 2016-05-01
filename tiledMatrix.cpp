@@ -149,16 +149,27 @@ tiledMatrix<T>::tiledMatrix(const tiledMatrix &x) {
 template <class T>
 tiledMatrix<T>::~tiledMatrix() {
 	cerr << "------------------------------------------------------------" <<endl;
-	cerr << "Sizeof(T): " << sizeof(T) << endl;
-	cerr << "Tamanho da matriz (MB): " << (nrows*((long long)ncolumns)*sizeof(T))/(1024*1024) << endl;
-	cerr << "Total falhas: " << totalFalhasTiles << endl;
-	cerr << "Total Tiles carregados: "<< tilesCarregadosMemoria << endl;
-	cerr << "Tempo total carregando tiles (s): " << tempoTotalCarregando/1000000 << endl;
-	cerr << "Tempo total carregando tiles (u): " << tempoTotalCarregando << endl;
-	cerr << "Tempo de carga para cada 1M celulas: " << (tempoTotalCarregando)/( ((double)tilesCarregadosMemoria+totalFalhasTiles)*tilesWidth*tilesWidth) << endl;
-	cerr << "Espaco ocupado por cada celula: " << sizeof(T) << '\n';
+	cerr << "Sizeof(T): "                                   << sizeof(T)           << endl;
+	cerr << "Tamanho da matriz (MB): "                      << (nrows*((long long)ncolumns)*sizeof(T))/(1024*1024) << endl;
+	cerr << "Total falhas: "                                << totalFalhasTiles << endl;
+	cerr << "Total Tiles carregados: "                      << tilesCarregadosMemoria << endl;
+	cerr << "Tempo total carregando tiles (s): "            << tempoTotalCarregando/1000000 << endl;
+	cerr << "Tempo total carregando tiles (u): "            << tempoTotalCarregando << endl;
+	cerr << "Tempo de carga para cada 1M celulas: "         << (tempoTotalCarregando)/( ((double)tilesCarregadosMemoria+totalFalhasTiles)*tilesWidth*tilesWidth) << endl;
+	cerr << "Espaco ocupado por cada celula: "              << sizeof(T) << '\n';
 	cerr << "Quantos MB de celula carregados por segundo: " <<  sizeof(T)/((tempoTotalCarregando)/( ((double)tilesCarregadosMemoria+totalFalhasTiles)*tilesWidth*tilesWidth))   << " MB/s" << endl;
-	cerr << "Numero de vezes o terreno foi recarregado: " << tilesCarregadosMemoria*1.0/(nrowsTiles*ncolumnsTiles) << endl ;
+	cerr << "Numero de vezes o terreno foi recarregado: "   << tilesCarregadosMemoria*1.0/(nrowsTiles*ncolumnsTiles) << endl ;
+
+	cerr << "Sizeof(T): "                                   << sizeof(T)           << endl;
+	cerr << "Size of the matrix (MB): "                     << (nrows*((long long)ncolumns)*sizeof(T))/(1024*1024) << endl;
+	cerr << "Total failures: "                              << totalFalhasTiles << endl;
+	cerr << "Total loaded tiles:     "                      << tilesCarregadosMemoria << endl;
+	cerr << "Total loading time of tiles (s):   "           << tempoTotalCarregando/1000000 << endl;
+	cerr << "Total loading time of tiles (us):  "           << tempoTotalCarregando << endl;
+	cerr << "Processing time for each 1M cells: "           << (tempoTotalCarregando)/( ((double)tilesCarregadosMemoria+totalFalhasTiles)*tilesWidth*tilesWidth) << endl;
+	cerr << "Space occupied by each cell: "                 << sizeof(T) << '\n';
+	cerr << "How many MB per second cells were loaded at: " <<  sizeof(T)/((tempoTotalCarregando)/( ((double)tilesCarregadosMemoria+totalFalhasTiles)*tilesWidth*tilesWidth))   << " MB/s" << endl;
+	cerr << "Number of times the land was reloaded: "       << tilesCarregadosMemoria*1.0/(nrowsTiles*ncolumnsTiles) << endl ;
 	cerr << "------------------------------------------------------------" <<endl;
 
 	delete timeStamps;
