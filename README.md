@@ -10,7 +10,12 @@ To compile, run **make** or use:
 
 Running
 -------
-To run, need set up the amount of memory available (line 77) and tiled block size (line 76) on code hydrogEmFillFlow.cpp and need set up the amount of memory available (line 44) and tiled block size (line 43) on code flow.cpp.
+To run, the following changes need to be made:
+
+ * Set the amount of memory available on Line 77 of hydrogEmFillFlow.cpp
+ * Set the tiled block size on Line 76 of hydrogEmFillFlow.cpp
+ * Set the amount of memory available on Line 44 of flow.cpp
+ * Set the tiled block size on Line 43 of flow.cpp.
 
     ./EMFlow nrows terrain_name.hgt
 

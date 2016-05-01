@@ -74,7 +74,7 @@ void ptime(const char *const msg) {
 
 
 int tilesWidth =  400;
-int tamMemoria = 1600;
+int tamMemoria = 1600; //Memory to use in megabytes
 const int TILE_CONECTED_COMPONENTS= 10;
 
 
