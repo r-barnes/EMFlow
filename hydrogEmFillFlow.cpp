@@ -79,18 +79,18 @@ const int TILE_CONECTED_COMPONENTS= 10;
 
 
 
-struct timeval tstart, end;
+struct timeval tstart, t_end;
 void zeraRelogio() {    
     gettimeofday(&tstart, NULL);
 
 }
 
 double getSecsDesdeZerado() {
-    long mtime, seconds, useconds;  
-    gettimeofday(&end, NULL);
+    long seconds, useconds;  
+    gettimeofday(&t_end, NULL);
 
-    seconds  = end.tv_sec  - tstart.tv_sec;
-    useconds = end.tv_usec - tstart.tv_usec;
+    seconds  = t_end.tv_sec  - tstart.tv_sec;
+    useconds = t_end.tv_usec - tstart.tv_usec;
 
 
 
@@ -559,7 +559,7 @@ int main(const int argc, const char **argv) {
 	//dirs.gravaStatVezes("dirsStatsFlood.pgm");
 	
 	delete elevs2; //Desaloca matriz de elevacao... nao precisamos dela mais!
-    time_t start,end;
+    time_t start,t_end;
     double dif;
     
     if(nrows <= 10000) { // o terreno cabe na memoria 
@@ -572,8 +572,8 @@ int main(const int argc, const char **argv) {
 	
 	    TIME(computeFlow(dirs,flow,nrows));
 	    TIME(writeFlowPgm(flow,nrows));
-        time (&end);
-        dif = difftime (end,start);
+        time (&t_end);
+        dif = difftime (t_end,start);
 	    cout << "\nFluxo acumulado----------------------\n";
 	    cout<< dif << endl;
 	
@@ -581,8 +581,8 @@ int main(const int argc, const char **argv) {
      }else {
 	     time (&start);
 	     TIME(CacheAwareAccumulation(dirs,nrows));
-         time (&end);
-         dif = difftime (end,start);
+         time (&t_end);
+         dif = difftime (t_end,start);
          cout << "\nFluxo acumulado----------------------\n";
 	     cout<< dif << endl;
 	//dirs.gravaStatVezes("dirsStatsFlow.pgm");

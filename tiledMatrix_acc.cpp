@@ -312,9 +312,9 @@ void tiledMatrix_acc<T>::gravaStatVezes(string arquivo) {
 
 template <class T>
 void tiledMatrix_acc<T>::loadTile(int i,int j) {
-    struct timeval start, end;
+//    struct timeval start, end;
 
-    long mtime, seconds, useconds;    
+//    long mtime, seconds, useconds;    
 
 	//cerr << "aqui " <<endl;
     //gettimeofday(&start, NULL);
